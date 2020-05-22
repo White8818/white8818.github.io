@@ -178,8 +178,8 @@
       </tags>
   </entry>
   <entry>
-    <title>使用WKWebview加载热更在本地的资源文件</title>
-    <url>/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E5%8A%A0%E8%BD%BD%E7%83%AD%E6%9B%B4%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/</url>
+    <title>使用WKWebview拦截替换本地资源</title>
+    <url>/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E6%8B%A6%E6%88%AA%E6%9B%BF%E6%8D%A2%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90/</url>
     <content><![CDATA[<blockquote>
 <p><code>WKWebView</code>替换本地资源的原理是通过<code>NSURLProtocol</code>代理<code>WKWebView</code>内的所有网络请求, 中间拿到每次加载的<code>URL</code>, 然后动态替换成本地沙盒内的对应路径下的资源文件.</p>
 </blockquote>

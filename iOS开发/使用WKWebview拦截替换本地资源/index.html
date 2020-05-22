@@ -92,12 +92,12 @@
 
 <meta name="description" content="WKWebView替换本地资源的原理是通过NSURLProtocol代理WKWebView内的所有网络请求, 中间拿到每次加载的URL, 然后动态替换成本地沙盒内的对应路径下的资源文件.  什么是NSURLProtocolNSURLProtocol是URL Loading System的重要组成部分。它听上去像一个协议类, 其实不是, 它是一个抽象类, 我们可以子类化来拦截网络请求。可以拦截的网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用WKWebview加载热更在本地的资源文件">
-<meta property="og:url" content="https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E5%8A%A0%E8%BD%BD%E7%83%AD%E6%9B%B4%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/index.html">
+<meta property="og:title" content="使用WKWebview拦截替换本地资源">
+<meta property="og:url" content="https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E6%8B%A6%E6%88%AA%E6%9B%BF%E6%8D%A2%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90/index.html">
 <meta property="og:site_name" content="White&#39;s Blog">
 <meta property="og:description" content="WKWebView替换本地资源的原理是通过NSURLProtocol代理WKWebView内的所有网络请求, 中间拿到每次加载的URL, 然后动态替换成本地沙盒内的对应路径下的资源文件.  什么是NSURLProtocolNSURLProtocol是URL Loading System的重要组成部分。它听上去像一个协议类, 其实不是, 它是一个抽象类, 我们可以子类化来拦截网络请求。可以拦截的网">
 <meta property="article:published_time" content="2020-05-22T08:41:29.000Z">
-<meta property="article:modified_time" content="2020-05-22T11:37:06.166Z">
+<meta property="article:modified_time" content="2020-05-22T11:38:59.588Z">
 <meta property="article:author" content="White">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="WKWebView">
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://white8818.github.io/iOS开发/使用WKWebview加载热更在本地的资源文件/"/>
+  <link rel="canonical" href="https://white8818.github.io/iOS开发/使用WKWebview拦截替换本地资源/"/>
 
 
 
 
 
-  <title>使用WKWebview加载热更在本地的资源文件 | White's Blog</title>
+  <title>使用WKWebview拦截替换本地资源 | White's Blog</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E5%8A%A0%E8%BD%BD%E7%83%AD%E6%9B%B4%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E6%8B%A6%E6%88%AA%E6%9B%BF%E6%8D%A2%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="White">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用WKWebview加载热更在本地的资源文件</h1>
+          <h1 class="post-title" itemprop="name headline">使用WKWebview拦截替换本地资源</h1>
         
 
         <div class="post-meta">
@@ -354,7 +354,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-05-22T19:37:06+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-05-22T19:38:59+08:00">
                 2020-05-22
               </time>
             
@@ -515,7 +515,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E5%8A%A0%E8%BD%BD%E7%83%AD%E6%9B%B4%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/" title="使用WKWebview加载热更在本地的资源文件">https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E5%8A%A0%E8%BD%BD%E7%83%AD%E6%9B%B4%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/</a>
+    <a href="https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E6%8B%A6%E6%88%AA%E6%9B%BF%E6%8D%A2%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90/" title="使用WKWebview拦截替换本地资源">https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E6%8B%A6%E6%88%AA%E6%9B%BF%E6%8D%A2%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
