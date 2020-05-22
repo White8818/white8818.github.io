@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://white8818.github.io/"/>
-  <updated>2020-05-22T11:29:22.807Z</updated>
+  <updated>2020-05-22T11:37:06.166Z</updated>
   <id>https://white8818.github.io/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E5%8A%A0%E8%BD%BD%E7%83%AD%E6%9B%B4%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/"/>
     <id>https://white8818.github.io/iOS开发/使用WKWebview加载热更在本地的资源文件/</id>
     <published>2020-05-22T08:41:29.000Z</published>
-    <updated>2020-05-22T11:29:22.807Z</updated>
+    <updated>2020-05-22T11:37:06.166Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;WKWebView&lt;/code&gt;替换本地资源的原理是通过&lt;code&gt;NSURLProtocol&lt;/code&gt;代理&lt;code&gt;WKWebView&lt;/code&gt;内的所有网络请求, 中间拿到每次加载的&lt;code&gt;URL&lt;/code&gt;, 然后动
-      
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;WKWebView&lt;/code&gt;替换本地资源的原理是通过&lt;code&gt;NSURLProtocol&lt;/code&gt;代理&lt;code&gt;WKWebView&lt;/code&gt;内的所有网络请求, 中间拿到每次加载的&lt;code&gt;URL&lt;/code&gt;, 然后动态替换成本地沙盒内的对应路径下的资源文件.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;什么是NSURLProtocol&quot;&gt;&lt;a href=&quot;#什么是NSURLProtocol&quot; class=&quot;headerlink&quot; title=&quot;什么是NSURLProtocol&quot;&gt;&lt;/a&gt;什么是NSURLProtocol&lt;/h2&gt;&lt;p&gt;&lt;code&gt;NSURLProtocol&lt;/code&gt;是URL Loading System的重要组成部分。它听上去像一个协议类, 其实不是, 它是一个抽象类, 我们可以子类化来拦截网络请求。可以拦截的网络请求包括``NSURLSession&lt;code&gt;，&lt;/code&gt;NSURLConnection&lt;code&gt;以及&lt;/code&gt;UIWebvIew&lt;code&gt;。本来之前是不能拦截&lt;/code&gt;WKWebView&lt;code&gt;的, 因为&lt;/code&gt;WKWebView&lt;code&gt;在独立于 app 进程之外的进程中执行网络请求，请求数据不经过主进程，因此，在&lt;/code&gt;WKWebView&lt;code&gt;上直接使用&lt;/code&gt;NSURLProtocol `无法拦截请求。&lt;/p&gt;
+&lt;p&gt;但是有大神通过阅读webkit的源码, 以及使用反射的方式拿到了&lt;code&gt;WKWebView&lt;/code&gt;用来处理请求的上下文和注册反注册方法: &lt;code&gt;WKBrowsingContextController&lt;/code&gt;和&lt;code&gt;registerSchemeForCustomProtocol&lt;/code&gt;, &lt;code&gt;unregisterSchemeForCustomProtocol&lt;/code&gt;. 然后通过KVC拿到&lt;code&gt;browsingContextController&lt;/code&gt;实例, 把&lt;code&gt;http&lt;/code&gt;和&lt;code&gt;https&lt;/code&gt;请求注册给&lt;code&gt;NSURLProtocol&lt;/code&gt;处理.&lt;/p&gt;
     
     </summary>
     
@@ -49,7 +49,7 @@
     <link href="https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/iOS%E5%BC%80%E5%8F%91-%E9%98%BF%E6%8B%89%E4%BC%AF%E9%80%82%E9%85%8DRTL/"/>
     <id>https://white8818.github.io/iOS开发/iOS开发-阿拉伯适配RTL/</id>
     <published>2019-10-24T03:21:55.000Z</published>
-    <updated>2020-05-22T11:27:34.329Z</updated>
+    <updated>2020-05-22T11:36:42.575Z</updated>
     
     <summary type="html">
     
@@ -73,7 +73,7 @@
     <link href="https://white8818.github.io/Hexo/Hexo+Next%E4%B8%BB%E9%A2%98%E5%AE%9A%E5%88%B6/"/>
     <id>https://white8818.github.io/Hexo/Hexo+Next主题定制/</id>
     <published>2018-12-25T10:54:09.000Z</published>
-    <updated>2020-05-14T17:12:41.434Z</updated>
+    <updated>2020-05-22T11:36:38.558Z</updated>
     
     <summary type="html">
     
