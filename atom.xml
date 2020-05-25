@@ -73,14 +73,14 @@
     <link href="https://white8818.github.io/Hexo/Hexo%E5%8D%9A%E5%AE%A2%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5%E9%85%8D%E7%BD%AE/"/>
     <id>https://white8818.github.io/Hexo/Hexo博客两台电脑同步配置/</id>
     <published>2019-01-06T06:05:41.000Z</published>
-    <updated>2020-05-25T07:17:26.910Z</updated>
+    <updated>2020-05-25T07:21:04.280Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;两台电脑同步Hexo配置&quot;&gt;&lt;a href=&quot;#两台电脑同步Hexo配置&quot; class=&quot;headerlink&quot; title=&quot;两台电脑同步Hexo配置&quot;&gt;&lt;/a&gt;两台电脑同步Hexo配置&lt;/h3&gt;&lt;p&gt;最近实在忍受不了公司的老MacBook Pro了, 于是出了
-      
+      &lt;h3 id=&quot;两台电脑同步Hexo配置&quot;&gt;&lt;a href=&quot;#两台电脑同步Hexo配置&quot; class=&quot;headerlink&quot; title=&quot;两台电脑同步Hexo配置&quot;&gt;&lt;/a&gt;两台电脑同步Hexo配置&lt;/h3&gt;&lt;p&gt;最近实在忍受不了公司的老MacBook Pro了, 于是出了自己的air, 买了台新的Pro, 但是hexo又好不容易配置到老mac上, 怎么办呢 ?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用Git管理Hexo源码, 换新设备, 直接clone下来, 装一下环境不就行了!&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;1-GitHub创建私人仓库&quot;&gt;&lt;a href=&quot;#1-GitHub创建私人仓库&quot; class=&quot;headerlink&quot; title=&quot;1.GitHub创建私人仓库&quot;&gt;&lt;/a&gt;1.GitHub创建私人仓库&lt;/h4&gt;&lt;p&gt;这一步很简单, 打开GitHub创建一个新的仓库取名HexoCode.&lt;/p&gt;
+&lt;p&gt;然后只需要把之前配置好的hexo文件夹上传上去, 这里注意是需要先提前设置好&lt;code&gt;gitignore&lt;/code&gt;文件, 因为我们的hexo已经安装了各种&lt;code&gt;npm&lt;/code&gt;依赖, 其实我们没必要把所有安装好的依赖也上传到github. 这里我的&lt;code&gt;gitignore&lt;/code&gt;添加了以下几项:&lt;/p&gt;
     
     </summary>
     
