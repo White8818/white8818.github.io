@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://white8818.github.io/"/>
-  <updated>2020-05-22T11:38:59.588Z</updated>
+  <updated>2020-05-25T02:02:27.239Z</updated>
   <id>https://white8818.github.io/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E6%8B%A6%E6%88%AA%E6%9B%BF%E6%8D%A2%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90/"/>
     <id>https://white8818.github.io/iOS开发/使用WKWebview拦截替换本地资源/</id>
     <published>2020-05-22T08:41:29.000Z</published>
-    <updated>2020-05-22T11:38:59.588Z</updated>
+    <updated>2020-05-25T02:02:27.239Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;WKWebView&lt;/code&gt;替换本地资源的原理是通过&lt;code&gt;NSURLProtocol&lt;/code&gt;代理&lt;code&gt;WKWebView&lt;/code&gt;内的所有网络请求, 中间拿到每次加载的&lt;code&gt;URL&lt;/code&gt;, 然后动态替换成本地沙盒内的对应路径下的资源文件.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;什么是NSURLProtocol&quot;&gt;&lt;a href=&quot;#什么是NSURLProtocol&quot; class=&quot;headerlink&quot; title=&quot;什么是NSURLProtocol&quot;&gt;&lt;/a&gt;什么是NSURLProtocol&lt;/h2&gt;&lt;p&gt;&lt;code&gt;NSURLProtocol&lt;/code&gt;是URL Loading System的重要组成部分。它听上去像一个协议类, 其实不是, 它是一个抽象类, 我们可以子类化来拦截网络请求。可以拦截的网络请求包括``NSURLSession&lt;code&gt;，&lt;/code&gt;NSURLConnection&lt;code&gt;以及&lt;/code&gt;UIWebvIew&lt;code&gt;。本来之前是不能拦截&lt;/code&gt;WKWebView&lt;code&gt;的, 因为&lt;/code&gt;WKWebView&lt;code&gt;在独立于 app 进程之外的进程中执行网络请求，请求数据不经过主进程，因此，在&lt;/code&gt;WKWebView&lt;code&gt;上直接使用&lt;/code&gt;NSURLProtocol `无法拦截请求。&lt;/p&gt;
+&lt;h2 id=&quot;什么是NSURLProtocol&quot;&gt;&lt;a href=&quot;#什么是NSURLProtocol&quot; class=&quot;headerlink&quot; title=&quot;什么是NSURLProtocol&quot;&gt;&lt;/a&gt;什么是NSURLProtocol&lt;/h2&gt;&lt;p&gt;&lt;code&gt;NSURLProtocol&lt;/code&gt;是URL Loading System的重要组成部分。它听上去像一个协议类, 其实不是, 它是一个抽象类, 我们可以子类化来拦截网络请求。可以拦截的网络请求包括&lt;code&gt;NSURLSession&lt;/code&gt;，&lt;code&gt;NSURLConnection&lt;/code&gt;以及&lt;code&gt;UIWebvIew&lt;/code&gt;。本来之前是不能拦截&lt;code&gt;WKWebView&lt;/code&gt;的, 因为&lt;code&gt;WKWebView&lt;/code&gt; 在独立于 app 进程之外的进程中执行网络请求，请求数据不经过主进程，因此，在 &lt;code&gt;WKWebView&lt;/code&gt; 上直接使用 &lt;code&gt;NSURLProtocol&lt;/code&gt;无法拦截请求。&lt;/p&gt;
 &lt;p&gt;但是有大神通过阅读webkit的源码, 以及使用反射的方式拿到了&lt;code&gt;WKWebView&lt;/code&gt;用来处理请求的上下文和注册反注册方法: &lt;code&gt;WKBrowsingContextController&lt;/code&gt;和&lt;code&gt;registerSchemeForCustomProtocol&lt;/code&gt;, &lt;code&gt;unregisterSchemeForCustomProtocol&lt;/code&gt;. 然后通过KVC拿到&lt;code&gt;browsingContextController&lt;/code&gt;实例, 把&lt;code&gt;http&lt;/code&gt;和&lt;code&gt;https&lt;/code&gt;请求注册给&lt;code&gt;NSURLProtocol&lt;/code&gt;处理.&lt;/p&gt;
     
     </summary>

@@ -183,7 +183,7 @@
     <content><![CDATA[<blockquote>
 <p><code>WKWebView</code>替换本地资源的原理是通过<code>NSURLProtocol</code>代理<code>WKWebView</code>内的所有网络请求, 中间拿到每次加载的<code>URL</code>, 然后动态替换成本地沙盒内的对应路径下的资源文件.</p>
 </blockquote>
-<h2 id="什么是NSURLProtocol"><a href="#什么是NSURLProtocol" class="headerlink" title="什么是NSURLProtocol"></a>什么是NSURLProtocol</h2><p><code>NSURLProtocol</code>是URL Loading System的重要组成部分。它听上去像一个协议类, 其实不是, 它是一个抽象类, 我们可以子类化来拦截网络请求。可以拦截的网络请求包括``NSURLSession<code>，</code>NSURLConnection<code>以及</code>UIWebvIew<code>。本来之前是不能拦截</code>WKWebView<code>的, 因为</code>WKWebView<code>在独立于 app 进程之外的进程中执行网络请求，请求数据不经过主进程，因此，在</code>WKWebView<code>上直接使用</code>NSURLProtocol `无法拦截请求。</p>
+<h2 id="什么是NSURLProtocol"><a href="#什么是NSURLProtocol" class="headerlink" title="什么是NSURLProtocol"></a>什么是NSURLProtocol</h2><p><code>NSURLProtocol</code>是URL Loading System的重要组成部分。它听上去像一个协议类, 其实不是, 它是一个抽象类, 我们可以子类化来拦截网络请求。可以拦截的网络请求包括<code>NSURLSession</code>，<code>NSURLConnection</code>以及<code>UIWebvIew</code>。本来之前是不能拦截<code>WKWebView</code>的, 因为<code>WKWebView</code> 在独立于 app 进程之外的进程中执行网络请求，请求数据不经过主进程，因此，在 <code>WKWebView</code> 上直接使用 <code>NSURLProtocol</code>无法拦截请求。</p>
 <p>但是有大神通过阅读webkit的源码, 以及使用反射的方式拿到了<code>WKWebView</code>用来处理请求的上下文和注册反注册方法: <code>WKBrowsingContextController</code>和<code>registerSchemeForCustomProtocol</code>, <code>unregisterSchemeForCustomProtocol</code>. 然后通过KVC拿到<code>browsingContextController</code>实例, 把<code>http</code>和<code>https</code>请求注册给<code>NSURLProtocol</code>处理.</p>
 <a id="more"></a>
 
