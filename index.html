@@ -305,6 +305,230 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://white8818.github.io/Homebrew/%E6%89%A7%E8%A1%8Cbrew-install%E5%91%BD%E4%BB%A4%E9%95%BF%E6%97%B6%E9%97%B4%E5%8D%A1%E5%9C%A8Updating-Homebrew%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="White">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="White's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Homebrew/%E6%89%A7%E8%A1%8Cbrew-install%E5%91%BD%E4%BB%A4%E9%95%BF%E6%97%B6%E9%97%B4%E5%8D%A1%E5%9C%A8Updating-Homebrew%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" itemprop="url">执行brew install命令长时间卡在Updating Homebrew的解决方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-04T00:29:31+08:00">
+                2021-03-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-04T00:46:46+08:00">
+                2021-03-04
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Homebrew/" itemprop="url" rel="index">
+                    <span itemprop="name">Homebrew</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  612
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在国内的网络环境下使用 <code>Homebrew</code> 安装软件的过程中可能会长时间卡在 <code>Updating Homebrew</code> 这个步骤。</p>
+<p>例：执行 <code>brew install ruby</code> 命令</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~ <span class="keyword">brew </span><span class="keyword">install </span>ruby</span><br><span class="line">Updating Homebrew... <span class="comment"># 如果碰到长时间卡在这里，参考以下 2 种处理方法</span></span><br></pre></td></tr></table></figure>
+
+
+<p>方法 1：按住control + c 取消本次更新操作</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~ brew install composer</span><br><span class="line"><span class="function"><span class="title">Updating</span></span> Homebrew...</span><br><span class="line">^C</span><br></pre></td></tr></table></figure>
+
+<p>按住 control + c 之后命令行会显示 ^C，就代表已经取消了 Updating Homebrew 操作</p>
+<p>大概不到 1 秒钟之后就会去执行我们真正需要的安装操作了</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~ brew install composer</span><br><span class="line">Updating Homebrew...</span><br><span class="line">^C==&gt; Satisfying dependencies</span><br><span class="line">=<span class="ruby">=&gt; Downloading <span class="symbol">https:</span>/<span class="regexp">/getcomposer.org/download</span><span class="regexp">/1.7.2/composer</span>.phar</span></span><br><span class="line"><span class="ruby">...</span></span><br></pre></td></tr></table></figure>
+
+<p>这个方法是临时的、一次性的</p>
+<p>方法 2：使用 Alibaba 的 Homebrew 镜像源进行加速<br>平时我们执行 brew 命令安装软件的时候，跟以下 3 个仓库地址有关：</p>
+<p><code>brew.git</code></p>
+<p><code>homebrew-core.git</code></p>
+<p><code>homebrew-bottles</code></p>
+<p>通过以下操作将这 3 个仓库地址全部替换为 Alibaba 提供的地址</p>
+<h3 id="1-替换-还原-brew-git-仓库地址"><a href="#1-替换-还原-brew-git-仓库地址" class="headerlink" title="1. 替换 / 还原 brew.git 仓库地址"></a>1. 替换 / 还原 brew.git 仓库地址</h3><h5 id="替换成阿里巴巴的-brew-git-仓库地址"><a href="#替换成阿里巴巴的-brew-git-仓库地址" class="headerlink" title="替换成阿里巴巴的 brew.git 仓库地址:"></a>替换成阿里巴巴的 brew.git 仓库地址:</h5><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">cd </span><span class="string">"$(brew --repo)"</span></span><br><span class="line"><span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">https:</span>//<span class="string">mirrors.</span><span class="string">aliyun.</span><span class="string">com/</span><span class="string">homebrew/</span><span class="string">brew.</span><span class="string">git</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="还原为官方提供的-brew-git-仓库地址"><a href="#还原为官方提供的-brew-git-仓库地址" class="headerlink" title="还原为官方提供的 brew.git 仓库地址"></a>还原为官方提供的 brew.git 仓库地址</h5><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">cd </span><span class="string">"$(brew --repo)"</span></span><br><span class="line"><span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">https:</span>//<span class="string">github.</span><span class="string">com/</span><span class="string">Homebrew/</span><span class="string">brew.</span><span class="string">git</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-替换-还原-homebrew-core-git-仓库地址"><a href="#2-替换-还原-homebrew-core-git-仓库地址" class="headerlink" title="2. 替换 / 还原 homebrew-core.git 仓库地址"></a>2. 替换 / 还原 homebrew-core.git 仓库地址</h3><h5 id="替换成阿里巴巴的-homebrew-core-git-仓库地址"><a href="#替换成阿里巴巴的-homebrew-core-git-仓库地址" class="headerlink" title="替换成阿里巴巴的 homebrew-core.git 仓库地址:"></a>替换成阿里巴巴的 homebrew-core.git 仓库地址:</h5><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">cd </span><span class="string">"$(brew --repo)/Library/Taps/homebrew/homebrew-core"</span></span><br><span class="line"><span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">https:</span>//<span class="string">mirrors.</span><span class="string">aliyun.</span><span class="string">com/</span><span class="string">homebrew/</span><span class="string">homebrew-core.</span><span class="string">git</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="还原为官方提供的-homebrew-core-git-仓库地址"><a href="#还原为官方提供的-homebrew-core-git-仓库地址" class="headerlink" title="还原为官方提供的 homebrew-core.git 仓库地址"></a>还原为官方提供的 homebrew-core.git 仓库地址</h5><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d <span class="string">"$(brew --repo)/Library/Taps/homebrew/homebrew-core"</span></span><br><span class="line"><span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">https:</span>//<span class="string">github.</span><span class="string">com/</span><span class="string">Homebrew/</span><span class="string">homebrew-core.</span><span class="string">git</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-替换-还原-homebrew-bottles-访问地址"><a href="#3-替换-还原-homebrew-bottles-访问地址" class="headerlink" title="3. 替换 / 还原 homebrew-bottles 访问地址"></a>3. 替换 / 还原 homebrew-bottles 访问地址</h3><p>这个步骤跟你的 macOS 系统使用的 shell 版本有关系</p>
+<p>所以，先来查看当前使用的 shell 版本</p>
+<p><code>echo $SHELL</code></p>
+<h5 id="如果你的输出结果是-bin-zsh，参考下方的-zsh-终端操作方式"><a href="#如果你的输出结果是-bin-zsh，参考下方的-zsh-终端操作方式" class="headerlink" title="如果你的输出结果是 /bin/zsh，参考下方的 zsh 终端操作方式"></a>如果你的输出结果是 /bin/zsh，参考下方的 zsh 终端操作方式</h5><h5 id="如果你的输出结果是-bin-bash，参考下方的-bash-终端操作方式"><a href="#如果你的输出结果是-bin-bash，参考下方的-bash-终端操作方式" class="headerlink" title="如果你的输出结果是 /bin/bash，参考下方的 bash 终端操作方式"></a>如果你的输出结果是 /bin/bash，参考下方的 bash 终端操作方式</h5><h3 id="3-1-zsh-终端操作方式"><a href="#3-1-zsh-终端操作方式" class="headerlink" title="3.1 zsh 终端操作方式"></a>3.1 zsh 终端操作方式</h3><h5 id="替换成阿里巴巴的-homebrew-bottles-访问地址"><a href="#替换成阿里巴巴的-homebrew-bottles-访问地址" class="headerlink" title="替换成阿里巴巴的 homebrew-bottles 访问地址:"></a>替换成阿里巴巴的 homebrew-bottles 访问地址:</h5><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> 'export HOMEBREW_BOTTLE_DOMAIN=https:<span class="string">//mirrors.aliyun.com/homebrew/homebrew-bottles</span>' &gt;&gt; ~<span class="string">/.zshrc</span></span><br><span class="line">source ~<span class="string">/.zshrc</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="还原为官方提供的-homebrew-bottles-访问地址"><a href="#还原为官方提供的-homebrew-bottles-访问地址" class="headerlink" title="还原为官方提供的 homebrew-bottles 访问地址"></a>还原为官方提供的 homebrew-bottles 访问地址</h5><p><code>vi ~/.zshrc</code></p>
+<h5 id="然后，删除-HOMEBREW-BOTTLE-DOMAIN-这一行配置"><a href="#然后，删除-HOMEBREW-BOTTLE-DOMAIN-这一行配置" class="headerlink" title="然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置"></a>然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置</h5><p><code>source ~/.zshrc</code></p>
+<h3 id="3-2-bash-终端操作方式"><a href="#3-2-bash-终端操作方式" class="headerlink" title="3.2 bash 终端操作方式"></a>3.2 bash 终端操作方式</h3><h5 id="替换-homebrew-bottles-访问-URL"><a href="#替换-homebrew-bottles-访问-URL" class="headerlink" title="替换 homebrew-bottles 访问 URL:"></a>替换 homebrew-bottles 访问 URL:</h5><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> 'export HOMEBREW_BOTTLE_DOMAIN=https:<span class="string">//mirrors.aliyun.com/homebrew/homebrew-bottles</span>' &gt;&gt; ~<span class="string">/.bash_profile</span></span><br><span class="line">source ~<span class="string">/.bash_profile</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="还原为官方提供的-homebrew-bottles-访问地址-1"><a href="#还原为官方提供的-homebrew-bottles-访问地址-1" class="headerlink" title="还原为官方提供的 homebrew-bottles 访问地址"></a>还原为官方提供的 homebrew-bottles 访问地址</h5><p><code>vi ~/.bash_profile</code></p>
+<h5 id="然后，删除-HOMEBREW-BOTTLE-DOMAIN-这一行配置-1"><a href="#然后，删除-HOMEBREW-BOTTLE-DOMAIN-这一行配置-1" class="headerlink" title="然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置"></a>然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置</h5><p><code>source ~/.bash_profile</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/SwiftCSV%E8%AF%BB%E5%8F%96CSV%E6%95%B0%E6%8D%AE%E5%8F%8A%E5%88%9D%E6%AD%A5%E5%B0%81%E8%A3%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1312,7 +1536,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1323,7 +1547,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1334,7 +1558,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1408,7 +1632,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.7k</span>
+    <span title="Site words total count">7.3k</span>
   
 </div>
 
