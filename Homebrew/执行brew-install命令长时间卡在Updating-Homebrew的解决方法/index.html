@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="White&#39;s Blog">
 <meta property="og:description" content="在国内的网络环境下使用 Homebrew 安装软件的过程中可能会长时间卡在 Updating Homebrew 这个步骤。 例：执行 brew install ruby 命令 12~ brew install rubyUpdating Homebrew... # 如果碰到长时间卡在这里，参考以下 2 种处理方法   方法 1：按住control + c 取消本次更新操作 123~ brew ins">
 <meta property="article:published_time" content="2021-03-03T16:29:31.000Z">
-<meta property="article:modified_time" content="2021-03-03T16:46:46.011Z">
+<meta property="article:modified_time" content="2021-03-03T16:50:01.447Z">
 <meta property="article:author" content="White">
 <meta property="article:tag" content="Homebrew">
 <meta name="twitter:card" content="summary">
@@ -352,7 +352,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-03-04T00:46:46+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-04T00:50:01+08:00">
                 2021-03-04
               </time>
             
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  612
+                  628
                 </span>
               
 
@@ -452,6 +452,8 @@
 <figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~ brew install composer</span><br><span class="line">Updating Homebrew...</span><br><span class="line">^C==&gt; Satisfying dependencies</span><br><span class="line">=<span class="ruby">=&gt; Downloading <span class="symbol">https:</span>/<span class="regexp">/getcomposer.org/download</span><span class="regexp">/1.7.2/composer</span>.phar</span></span><br><span class="line"><span class="ruby">...</span></span><br></pre></td></tr></table></figure>
 
 <p>这个方法是临时的、一次性的</p>
+<a id="more"></a>
+
 <p>方法 2：使用 Alibaba 的 Homebrew 镜像源进行加速<br>平时我们执行 brew 命令安装软件的时候，跟以下 3 个仓库地址有关：</p>
 <p><code>brew.git</code></p>
 <p><code>homebrew-core.git</code></p>
@@ -477,6 +479,7 @@
 
 <h5 id="还原为官方提供的-homebrew-bottles-访问地址-1"><a href="#还原为官方提供的-homebrew-bottles-访问地址-1" class="headerlink" title="还原为官方提供的 homebrew-bottles 访问地址"></a>还原为官方提供的 homebrew-bottles 访问地址</h5><p><code>vi ~/.bash_profile</code></p>
 <h5 id="然后，删除-HOMEBREW-BOTTLE-DOMAIN-这一行配置-1"><a href="#然后，删除-HOMEBREW-BOTTLE-DOMAIN-这一行配置-1" class="headerlink" title="然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置"></a>然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置</h5><p><code>source ~/.bash_profile</code></p>
+<p>参考文章:<br><a href="https://learnku.com/articles/18908" target="_blank" rel="noopener">长时间卡在 Updating Homebrew 的解决方法</a></p>
 
       
     </div>

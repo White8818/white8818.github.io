@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://white8818.github.io/"/>
-  <updated>2021-03-03T16:46:46.011Z</updated>
+  <updated>2021-03-03T16:50:01.447Z</updated>
   <id>https://white8818.github.io/</id>
   
   <author>
@@ -21,15 +21,23 @@
     <link href="https://white8818.github.io/Homebrew/%E6%89%A7%E8%A1%8Cbrew-install%E5%91%BD%E4%BB%A4%E9%95%BF%E6%97%B6%E9%97%B4%E5%8D%A1%E5%9C%A8Updating-Homebrew%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
     <id>https://white8818.github.io/Homebrew/执行brew-install命令长时间卡在Updating-Homebrew的解决方法/</id>
     <published>2021-03-03T16:29:31.000Z</published>
-    <updated>2021-03-03T16:46:46.011Z</updated>
+    <updated>2021-03-03T16:50:01.447Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;在国内的网络环境下使用 &lt;code&gt;Homebrew&lt;/code&gt; 安装软件的过程中可能会长时间卡在 &lt;code&gt;Updating Homebrew&lt;/code&gt; 这个步骤。&lt;/p&gt;
+      &lt;p&gt;在国内的网络环境下使用 &lt;code&gt;Homebrew&lt;/code&gt; 安装软件的过程中可能会长时间卡在 &lt;code&gt;Updating Homebrew&lt;/code&gt; 这个步骤。&lt;/p&gt;
 &lt;p&gt;例：执行 &lt;code&gt;brew install ruby&lt;/code&gt; 命令&lt;/p&gt;
-      
+&lt;figure class=&quot;highlight mipsasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;~ &lt;span class=&quot;keyword&quot;&gt;brew &lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;install &lt;/span&gt;ruby&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Updating Homebrew... &lt;span class=&quot;comment&quot;&gt;# 如果碰到长时间卡在这里，参考以下 2 种处理方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;方法 1：按住control + c 取消本次更新操作&lt;/p&gt;
+&lt;figure class=&quot;highlight gams&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;~ brew install composer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;Updating&lt;/span&gt;&lt;/span&gt; Homebrew...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;^C&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;按住 control + c 之后命令行会显示 ^C，就代表已经取消了 Updating Homebrew 操作&lt;/p&gt;
+&lt;p&gt;大概不到 1 秒钟之后就会去执行我们真正需要的安装操作了&lt;/p&gt;
+&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;~ brew install composer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Updating Homebrew...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;^C==&amp;gt; Satisfying dependencies&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;=&lt;span class=&quot;ruby&quot;&gt;=&amp;gt; Downloading &lt;span class=&quot;symbol&quot;&gt;https:&lt;/span&gt;/&lt;span class=&quot;regexp&quot;&gt;/getcomposer.org/download&lt;/span&gt;&lt;span class=&quot;regexp&quot;&gt;/1.7.2/composer&lt;/span&gt;.phar&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;ruby&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这个方法是临时的、一次性的&lt;/p&gt;
     
     </summary>
     
@@ -76,7 +84,7 @@
     <link href="https://white8818.github.io/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8WKWebview%E6%8B%A6%E6%88%AA%E6%9B%BF%E6%8D%A2%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90/"/>
     <id>https://white8818.github.io/iOS开发/使用WKWebview拦截替换本地资源/</id>
     <published>2020-05-22T08:41:29.000Z</published>
-    <updated>2020-05-25T02:06:48.055Z</updated>
+    <updated>2021-03-03T16:36:23.191Z</updated>
     
     <summary type="html">
     

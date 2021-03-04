@@ -340,6 +340,8 @@
 <figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">~ brew install composer</span><br><span class="line">Updating Homebrew...</span><br><span class="line">^C==&gt; Satisfying dependencies</span><br><span class="line">=<span class="ruby">=&gt; Downloading <span class="symbol">https:</span>/<span class="regexp">/getcomposer.org/download</span><span class="regexp">/1.7.2/composer</span>.phar</span></span><br><span class="line"><span class="ruby">...</span></span><br></pre></td></tr></table></figure>
 
 <p>这个方法是临时的、一次性的</p>
+<a id="more"></a>
+
 <p>方法 2：使用 Alibaba 的 Homebrew 镜像源进行加速<br>平时我们执行 brew 命令安装软件的时候，跟以下 3 个仓库地址有关：</p>
 <p><code>brew.git</code></p>
 <p><code>homebrew-core.git</code></p>
@@ -365,6 +367,7 @@
 
 <h5 id="还原为官方提供的-homebrew-bottles-访问地址-1"><a href="#还原为官方提供的-homebrew-bottles-访问地址-1" class="headerlink" title="还原为官方提供的 homebrew-bottles 访问地址"></a>还原为官方提供的 homebrew-bottles 访问地址</h5><p><code>vi ~/.bash_profile</code></p>
 <h5 id="然后，删除-HOMEBREW-BOTTLE-DOMAIN-这一行配置-1"><a href="#然后，删除-HOMEBREW-BOTTLE-DOMAIN-这一行配置-1" class="headerlink" title="然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置"></a>然后，删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置</h5><p><code>source ~/.bash_profile</code></p>
+<p>参考文章:<br><a href="https://learnku.com/articles/18908" target="_blank" rel="noopener">长时间卡在 Updating Homebrew 的解决方法</a></p>
 ]]></content>
       <categories>
         <category>Homebrew</category>
