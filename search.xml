@@ -376,4 +376,32 @@
         <tag>Homebrew</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Next主题侧边栏日志404问题</title>
+    <url>/Hexo/Next%E4%B8%BB%E9%A2%98%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%97%A5%E5%BF%97404%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>记录下出现的 问题：日志出现<code>Cannot GET /archives/%7C%7C%20archives/</code>问题</p>
+<p>综合了网上的解决办法：</p>
+<p>1: <code>themes/next/_config.yml</code>文件下将<code>archives：/archives/ || archive` 改成`archives：/archives/</code></p>
+<p>删掉后面的<code>||archive</code>，的确能够解决问题，但是就没有图标了</p>
+<p>2: 也是我后来采用的方法。</p>
+<p>Next主题目录下</p>
+<p><code>/layout/_macro/sidebar.swig</code>文件中找到</p>
+<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; url_for(theme.menu.archives).split('||')[0] | trim &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>原因是<code>url_for</code>函数将<code>||</code>转码了，</p>
+<p>改成</p>
+<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123;url_for(theme.menu.archives.split('||')[0])| trim&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>即可</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Next</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
 </search>

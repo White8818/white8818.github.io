@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://white8818.github.io/"/>
-  <updated>2021-03-03T16:50:01.447Z</updated>
+  <updated>2021-04-14T03:43:50.733Z</updated>
   <id>https://white8818.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Next主题侧边栏日志404问题</title>
+    <link href="https://white8818.github.io/Hexo/Next%E4%B8%BB%E9%A2%98%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%97%A5%E5%BF%97404%E9%97%AE%E9%A2%98/"/>
+    <id>https://white8818.github.io/Hexo/Next主题侧边栏日志404问题/</id>
+    <published>2021-04-14T03:29:43.000Z</published>
+    <updated>2021-04-14T03:43:50.733Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;记录下出现的 问题：日志出现&lt;code&gt;Cannot GET /archives/%7C%7C%20archives/&lt;/code&gt;问题&lt;/p&gt;
+&lt;p&gt;综合了网上的解决办法：&lt;/p&gt;
+&lt;p&gt;1: &lt;code&gt;themes/next/_config.yml&lt;/code&gt;文件下
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://white8818.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Next" scheme="https://white8818.github.io/tags/Next/"/>
+    
+      <category term="Hexo" scheme="https://white8818.github.io/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>执行brew install命令长时间卡在Updating Homebrew的解决方法</title>
